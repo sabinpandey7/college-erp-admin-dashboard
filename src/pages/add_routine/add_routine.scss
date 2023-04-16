@@ -1,0 +1,57 @@
+@import "../../utils/colors";
+
+.add_routine {
+  flex: 1;
+  padding: 40px;
+  color: $text_black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  form {
+    display: flex;
+    width: 500px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    .error {
+      background-color: $light_pink;
+      color: $text_black;
+      text-align: center;
+      padding: 5px;
+      border-radius: 4px;
+    }
+    button {
+      background-color: $primary_color;
+      color: white;
+      padding: 5px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 200px;
+      align-self: center;
+    }
+    .field {
+      display: flex;
+      align-items: center;
+      span {
+        width: 40%;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .select {
+        width: 60%;
+      }
+
+      input,
+      select {
+        padding: 8px;
+        width: 60%;
+        color: gray;
+        outline: lightblue;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    }
+  }
+}

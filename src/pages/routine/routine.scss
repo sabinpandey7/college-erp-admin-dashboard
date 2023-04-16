@@ -1,0 +1,85 @@
+@import "../../utils/colors";
+
+.routine {
+  flex: 1;
+  padding: 40px;
+  button {
+    background-color: $primary_color;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    align-self: center;
+  }
+  button {
+    &:disabled {
+      background-color: gray;
+    }
+  }
+  .header {
+    color: $text_black;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-evenly;
+    border-bottom: 2px solid rgb(205, 203, 203);
+    padding-bottom: 20px;
+    gap: 20px;
+    .field {
+      font-weight: bold;
+    }
+  }
+  form {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    .field {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      gap: 10px;
+      color: $text_black;
+      font-weight: bold;
+      select,
+      input {
+        border: 1px solid hsl(0, 0%, 70%);
+        border-radius: 4px;
+        flex: 1;
+        padding: 5px;
+      }
+      .select {
+        flex: 1;
+      }
+    }
+  }
+  .timeTables {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    table {
+      margin: 20px 0px;
+      min-width: 300px;
+      table-layout: auto;
+      border-collapse: collapse;
+      th,
+      td {
+        position: relative;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid $primary_color;
+        color: gray;
+
+        .icon {
+          position: absolute;
+          top: 5px;
+          color: red;
+          size: 40px;
+          right: 10px;
+        }
+      }
+    }
+  }
+}

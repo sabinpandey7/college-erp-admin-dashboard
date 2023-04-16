@@ -1,0 +1,41 @@
+@import '../../utils/colors';
+
+
+.home{
+    flex: 1;
+    padding: 40px 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .heading{
+        font-weight: bold;
+        font-family: sans-serif;
+        color: gray;
+    }
+    .headers{
+        display: flex;
+        justify-content: space-between;
+    }
+    .body{
+        margin-top: 40px;
+        display: flex;
+        gap: 10px;
+        .subtitle{
+           text-align: center;
+           margin-bottom: 10px;
+        }
+        .left{        
+            flex: 1;
+            .calendar{
+                width: 100%;
+            }
+        }
+        .right{
+          flex: 2;
+          max-height: 300px;
+        }
+    }
+}

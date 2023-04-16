@@ -1,0 +1,82 @@
+@import "../../utils/colors";
+
+.student {
+  flex: 1;
+  padding: 40px 20px;
+  button {
+    background-color: $primary_color;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .headers {
+    display: flex;
+    width: "100%";
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    .filter {
+      display: flex;
+      gap: 40px;
+      .field {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 18px;
+        color: $text_black;
+
+        input {
+          padding: 4px;
+          border: 1px solid $text_black;
+          border-radius: 5px;
+        }
+        select {
+          padding: 4px;
+          border-radius: 5px;
+        }
+        button {
+          padding: 5px;
+          width: 100px;
+          background-color: $primary_color;
+          border: none;
+          border-radius: 5px;
+          color: white;
+        }
+      }
+    }
+
+    .search {
+      display: flex;
+      gap: 40px;
+      input {
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px solid $text_black;
+      }
+      button {
+        padding: 5px;
+        width: 100px;
+        background-color: $primary_color;
+        border: none;
+        border-radius: 5px;
+        color: white;
+      }
+    }
+  }
+  table {
+    margin: 10px 0px;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      border: 1px solid $primary_color;
+      color: gray;
+    }
+  }
+}

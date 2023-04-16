@@ -1,0 +1,90 @@
+@import "../../utils/colors";
+
+.routines {
+  flex: 1;
+  padding: 40px;
+  button {
+    padding: 5px;
+    width: 100px;
+    background-color: $primary_color;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .centerModal {
+      text-align: center;
+      padding: 20px;
+      background-color: $primary_color;
+      color: $text_black;
+      border-radius: 10px;
+      button {
+        margin: 20px;
+      }
+      .noBtn {
+        background-color: rgb(132, 15, 15);
+        color: white;
+      }
+      .yesBtn {
+        background-color: rgb(45, 10, 121);
+        color: white;
+      }
+    }
+  }
+  .headers {
+    display: flex;
+    width: "100%";
+    margin-bottom: 10px;
+    gap: 40px;
+    align-items: center;
+    .filter {
+      display: flex;
+      gap: 40px;
+      .field {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 18px;
+        color: $text_black;
+
+        input {
+          padding: 4px;
+          border: 1px solid $text_black;
+          border-radius: 5px;
+        }
+        select {
+          padding: 4px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  table {
+    margin: 20px 0px;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      border: 1px solid $primary_color;
+      color: gray;
+    }
+    .deleteBtn {
+      background-color: red;
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../utils/colors";
+
+.teacher {
+  flex: 1;
+  padding: 40px 20px;
+
+  button {
+    padding: 5px;
+    min-width: 100px;
+    background-color: $primary_color;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .headers {
+    display: flex;
+    width: "100%";
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    .search {
+      display: flex;
+      gap: 40px;
+      input {
+        padding: 4px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid grey;
+        color: gray;
+      }
+    }
+  }
+  table {
+    margin: 10px 0px;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      border: 1px solid $primary_color;
+      color: gray;
+    }
+  }
+}

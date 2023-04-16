@@ -1,0 +1,54 @@
+@import "../../utils/colors";
+.editUser {
+  padding: 40px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    text-align: center;
+    color: $text_black;
+    margin-bottom: 20px;
+  }
+  .error {
+    background-color: $light_pink;
+    padding: 5px;
+    width: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $text_black;
+    border-radius: 5px;
+  }
+  .left {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 500;
+    .row {
+      width: 49%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: rgb(9, 67, 5);
+      input,
+      select {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        color: rgb(76, 94, 80);
+      }
+    }
+  }
+  button {
+    margin: 20px;
+    width: 200px;
+    background-color: $primary_color;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+}

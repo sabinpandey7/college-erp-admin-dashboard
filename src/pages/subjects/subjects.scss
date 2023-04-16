@@ -1,0 +1,85 @@
+@import "../../utils/colors";
+
+.subject {
+  flex: 1;
+  padding: 40px;
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .centerModal {
+      text-align: center;
+      padding: 20px;
+      background-color: $primary_color;
+      color: $text_black;
+      border-radius: 10px;
+      button {
+        margin: 20px;
+      }
+      .noBtn {
+        background-color: rgb(132, 15, 15);
+        color: white;
+      }
+      .yesBtn {
+        background-color: rgb(45, 10, 121);
+        color: white;
+      }
+    }
+  }
+
+  button {
+    padding: 5px;
+    min-width: 100px;
+    background-color: $primary_color;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .headers {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    form,
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    span {
+      color: $text_black;
+      font-size: 18px;
+    }
+    input {
+      outline: none;
+      border-radius: 5px;
+      padding: 5px;
+      color: gray;
+      border: 1px solid $text_black;
+    }
+  }
+
+  table {
+    margin: 10px 0px;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      border: 1px solid $primary_color;
+      color: gray;
+    }
+  }
+}

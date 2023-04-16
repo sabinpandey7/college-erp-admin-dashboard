@@ -1,0 +1,24 @@
+@import '../../utils/colors';
+
+
+.summaryCard{
+    background-color:$light_yellow;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p{
+        margin-bottom: 10px;
+    }
+    .title{
+        color:$primary_color;
+        font-size: 20;
+        font-weight:bold;
+    }
+    .amount{
+        color: 'black';
+    }
+}

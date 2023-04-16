@@ -1,0 +1,101 @@
+@import "../../utils/colors";
+
+.profile {
+  flex: 1;
+  padding: 40px;
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .centerModal {
+      text-align: center;
+      padding: 20px;
+      width: 400px;
+      background-color: $primary_color;
+      color: $text_black;
+      border-radius: 10px;
+      p {
+        margin: 10px 0px;
+      }
+      button {
+        margin: 20px;
+        padding: 10px;
+        border: none;
+        width: 50px;
+        border-radius: 5px;
+      }
+      .noBtn {
+        background-color: rgb(132, 15, 15);
+        color: white;
+      }
+      .yesBtn {
+        background-color: rgb(45, 10, 121);
+        color: white;
+      }
+    }
+  }
+
+  .personal-details {
+    display: flex;
+    align-items: center;
+    .left {
+      flex: 0.5;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      display: flex;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      button {
+        padding: 5px;
+        width: 100px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+      }
+      .editBtn {
+        background-color: $primary_color;
+        margin-right: 10px;
+      }
+      .deleteBtn {
+        background-color: red;
+      }
+    }
+    .right {
+      flex: 0.5;
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        color: $text_black;
+        width: 50%;
+        margin-bottom: 20px;
+      }
+      .field {
+        font-weight: bold;
+      }
+      .value {
+        font-style: italic;
+      }
+    }
+  }
+  .performances {
+    width: 100%;
+    padding: 20px;
+    border-top: 1px solid gray;
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}
