@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react"
+import React, { useContext, useRef, useState } from "react"
 import "./add_user.scss"
 import axios from "axios"
 import { apiHost } from "../../utils/config"
 import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext"
 
 const AddUser = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -20,6 +21,10 @@ const AddUser = () => {
   const addressRef = useRef()
   const navigate = useNavigate()
 
+  const {
+    state: { token },
+  } = useContext(AuthContext)
+
   const handleCreate = async (e) => {
     e.preventDefault()
     setIsLoading(true)
@@ -34,18 +39,26 @@ const AddUser = () => {
     const father = fatherRef.current.value
     const address = addressRef.current.value
     try {
-      await axios.post(`${apiHost}/auth/register`, {
-        id: Number.parseInt(id),
-        name: name,
-        department: department,
-        branch: branch,
-        batch: Number.parseInt(batch),
-        role: role,
-        password: password,
-        nationality: nationality,
-        father: father,
-        address: address,
-      })
+      await axios.post(
+        `${apiHost}/auth/register`,
+        {
+          id: Number.parseInt(id),
+          name: name,
+          department: department,
+          branch: branch,
+          batch: Number.parseInt(batch),
+          role: role,
+          password: password,
+          nationality: nationality,
+          father: father,
+          address: address,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       setError(null)
       navigate(`/profile/${id}`)
     } catch (error) {

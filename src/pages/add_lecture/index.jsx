@@ -4,6 +4,8 @@ import SearchDropDown from "../../components/search_dropdown"
 import { apiHost } from "../../utils/config"
 import "./add_lecture.scss"
 import { Navigate, useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { AuthContext } from "../../context/AuthContext"
 
 const AddLecture = () => {
   const [teacher, setTeacher] = useState()
@@ -12,6 +14,11 @@ const AddLecture = () => {
   const [sem, setSem] = useState(1)
   const [session, setSession] = useState(2019)
   const navigate = useNavigate()
+
+  const {
+    state: { token },
+  } = useContext(AuthContext)
+
   const handleCreate = async (e) => {
     e.preventDefault()
     if (teacher && subject && branch && sem && session) {
@@ -27,8 +34,7 @@ const AddLecture = () => {
           },
           {
             headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxMTA1MTAxMSwiaWF0IjoxNjc4NTU3MTQ1LCJleHAiOjE2ODExNDkxNDV9.qpxyIbDTpKks9Re9jaTmDsR6_wBLXH2z3WyUKJW5u7E",
+              Authorization: `Bearer ${token}`,
             },
           }
         )
@@ -81,7 +87,6 @@ const AddLecture = () => {
             value={session}
             onChange={(e) => setSession(Number.parseInt(e.target.value))}
             type={"number"}
-            defaultValue={2022}
             min={2019}
           />
         </div>
