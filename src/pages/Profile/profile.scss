@@ -66,9 +66,13 @@
       }
       .editBtn {
         background-color: $primary_color;
-        margin-right: 10px;
       }
       .deleteBtn {
+        margin: 0px 10px;
+        background-color: red;
+      }
+      .resetBtn {
+        width: max-content;
         background-color: red;
       }
     }

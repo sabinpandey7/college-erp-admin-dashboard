@@ -11,6 +11,7 @@ import { Navigate } from "react-router-dom"
 const Profile = () => {
   const { id } = useParams()
   const [open, setOpen] = useState(false)
+  const [openResetModal, setOpenResetModal] = useState(false)
   const navigate = useNavigate()
 
   const {
@@ -39,6 +40,27 @@ const Profile = () => {
       console.log(error)
     }
   }
+  const resetPassword = async () => {
+    try {
+      axios.post(
+        `${apiHost}/user/${id}/changepassword`,
+        {
+          password: "maya123",
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      alert("Password Changed")
+    } catch (error) {
+      alert("Something went wrong")
+      console.log(error)
+    } finally {
+      setOpenResetModal(false)
+    }
+  }
 
   return (
     <div className="profile">
@@ -59,6 +81,19 @@ const Profile = () => {
           </div>
         </div>
       )}
+      {openResetModal && (
+        <div className="modal">
+          <div className="centerModal">
+            <h2>Are you sure want to reset Password?</h2>
+            <button className="yesBtn" onClick={resetPassword}>
+              Yes
+            </button>
+            <button onClick={() => setOpenResetModal(false)} className="noBtn">
+              No
+            </button>
+          </div>
+        </div>
+      )}
       {data && (
         <div className="personal-details">
           <div className="left">
@@ -69,6 +104,11 @@ const Profile = () => {
               </Link>
               <button onClick={() => setOpen(true)} className="deleteBtn">
                 Delete
+              </button>
+              <button
+                onClick={() => setOpenResetModal(true)}
+                className="resetBtn">
+                Reset Password
               </button>
             </div>
           </div>
